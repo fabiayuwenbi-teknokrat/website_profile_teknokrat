@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nano Folio - Simple HTML Template</title>
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+	<link href="css/magnific-popup.min.css" rel="stylesheet">
+    <link href="css/tooplate-style.css" rel="stylesheet">
+<!--
+
+Tooplate 2122 Nano Folio
+
+https://www.tooplate.com/view/2122-nano-folio
+
+-->
+</head>
+<body>
+	<div class="tm-container-fluid">
+		<section class="tm-site-header tm-flex-center tm-mb-50 tm-bgcolor-2 tm-border-rounded">
+			<img src="img/DSC_0413 (Fabia Yuwenbi).png" alt="" style="width: 180px; padding-top: 32px;">
+			<h1>Fabia Yuwenbi</h1>
+			<h1>21312044</h1>
+			<h1>IF 21 A</h1>
+		</section>
+
+		<section class="tm-about tm-mb-80 tm-p-50 tm-bgcolor-3 tm-border-rounded">
+			<div class="tm-about-header tm-flex-center">
+				<h2>Lokasi Universitas Teknokrat Indonesia</h2>
+			</div>
+			<div class="tm-about-text">
+				<iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3972.226620181534!2d105.2578159!3d-5.382384!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dadc7970b277%3A0x5b1fe57f83b6416c!2sUniversitas%20Teknokrat%20Indonesia!5e0!3m2!1sid!2sid!4v1679625584925!5m2!1sid!2sid"
+                    width="560" height="420" style="border: 3px solid black;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="google-map-uti-iframe">
+                </iframe>
+			</div>
+		</section>
+
+		<div class="tm-gallery-section tm-mb-80">
+			<div class="tm-gallery">				
+				<div class="tm-gallery-item">
+		            <a href="img/UTI_Gedung-A.jpg">
+		            	<img src="img/UTI_Gedung-A.jpg" alt="City Scape" class="img-fluid" />
+		            </a>
+		        </div>
+				<div class="tm-gallery-item">
+		            <a href="img/UTI_Gedung-FSIP.jpg">
+		            	<img src="img/UTI_Gedung-FSIP.jpg" alt="Beautiful Lady" class="img-fluid" />
+		            </a>
+		        </div>
+				<div class="tm-gallery-item">
+		            <a href="img/Duta-Teknokrat-2020.jpg">
+		            	<img src="img/Duta-Teknokrat-2020.jpg" alt="City over cloud" class="img-fluid" />
+		            </a>
+		        </div>
+				<div class="tm-gallery-item">
+		            <a href="img/Rama-Runner-Up-II.jpg">
+		            	<img src="img/Rama-Runner-Up-II.jpg" alt="City over cloud" class="img-fluid" />
+		            </a>
+		        </div>
+			</div>			
+		</div>
+
+		<footer style="background-color: lightgray; padding: 12px; text-align: center;">
+			<div>
+				Fabia Yuwenbi - Desain Website Universitas Teknokrat Indonesia
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script>
+		$(function(){
+		  	// Init the image gallery
+		  	var $gallery = $(".tm-gallery").isotope({
+		    	itemSelector: ".tm-gallery-item",
+		    	layoutMode: "fitRows"
+		  	});
+		  
+		  	// Layout Isotope after each image loads
+		  	$gallery.imagesLoaded().progress(function() {
+		    	$gallery.isotope("layout");
+		  	});
+
+		  	$(".filters-button-group").on("click", "a", function(e) {
+		  		e.preventDefault();
+			    var filterValue = $(this).attr("data-filter");
+			    $gallery.isotope({ filter: filterValue });
+			    $('.filters-button-group a').removeClass('active');
+			    $(this).addClass('active');
+			});
+
+		  	// Magnific Pop up
+		  	$('.tm-gallery').magnificPopup({
+		  		delegate: 'a',
+			  	type: 'image',
+				  gallery: { enabled: true }
+			});
+		});
+	</script>
+</body>
+</html>
